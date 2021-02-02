@@ -6,7 +6,7 @@
 <md:EntityDescriptor
     xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
     xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-    entityID="https://django-speed.herokuapp.com/"
+    entityID="https://django-speed.herokuapp.com"
     ID="_681a637-6cd4-434f-92c3-4fed720b2ad8">
 
     <!-- Il certificato del Service Provider va riportato nei due tag KeyDescriptor
