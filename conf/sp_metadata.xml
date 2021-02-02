@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!-- Esempio di metadata Service Provider
+     Per informazioni sulla compilazione fare riferimento alle Regole Tecniche SPID -->
+
+<!-- entityID è una URI che individua univocamente il Service Provider -->
+<md:EntityDescriptor
+    xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+    xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    entityID="https://django-speed.herokuapp.com/"
+    ID="_681a637-6cd4-434f-92c3-4fed720b2ad8">
+
+    <!-- Il certificato del Service Provider va riportato nei due tag KeyDescriptor
+         qui sotto, senza i delimitatori ‐‐‐ BEGIN CERTIFICATE ‐‐‐ e ‐‐‐ END CERTIFICATE ‐‐‐ -->
+    <md:SPSSODescriptor
+        protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"
+        AuthnRequestsSigned="true"
+        WantAssertionsSigned="true">
+
+        <md:KeyDescriptor use="signing">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIICqDCCAhGgAwIBAgIBADANBgkqhkiG9w0BAQ0FADBxMQswCQYDVQQGEwJpdDEL
+MAkGA1UECAwCUk0xEjAQBgNVBAoMCU9wZW5wb2xpczEaMBgGA1UEAwwRc3BpZC5v
+cGVucG9saXMuaXQxJTAjBgkqhkiG9w0BCQEWFmd1Z2xpZWxtb0BvcGVucG9saXMu
+aXQwHhcNMTcxMDA5MDUzODQ5WhcNMTgxMDA5MDUzODQ5WjBxMQswCQYDVQQGEwJp
+dDELMAkGA1UECAwCUk0xEjAQBgNVBAoMCU9wZW5wb2xpczEaMBgGA1UEAwwRc3Bp
+ZC5vcGVucG9saXMuaXQxJTAjBgkqhkiG9w0BCQEWFmd1Z2xpZWxtb0BvcGVucG9s
+aXMuaXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAONotO3WARQQsB/6Cr8O
+Bb+0aR4QsZPCDoenjXUY0kyaj6a2/T8tdznBhIV/j9Fmz++9TueccNTn9PBSz9gO
+mentdBSDZalvKUzs4FEuKpj7VUcFdul0n3/dt9co6dBVh6OYyBeiA9id31SlT6IS
+NfK10d8C49n1B624GypDxNlFAgMBAAGjUDBOMB0GA1UdDgQWBBRjV9n3eHhabvCD
+Q2B/BZII4laxkTAfBgNVHSMEGDAWgBRjV9n3eHhabvCDQ2B/BZII4laxkTAMBgNV
+HRMEBTADAQH/MA0GCSqGSIb3DQEBDQUAA4GBAKf8RoLnJIH5CsqQ5avJnLBtnvTy
+fQDVwhestgVdPZoSDM8Vpu5hC/Y+svdNJHT3HYqILePMhS1CmTuuGUz4Ftd5eW/O
+gm5+ZP+3dEd6oR3pj1ew/n7kXGf2SzyAPyXkWu67gjn9XYmdtA2tXaEoykkmh4Zn
+uNuPpbTpqiRBqCIL
+</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </md:KeyDescriptor>
+
+        <md:KeyDescriptor use="encryption">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAONotO3WARQQsB/6
+Cr8OBb+0aR4QsZPCDoenjXUY0kyaj6a2/T8tdznBhIV/j9Fmz++9TueccNTn9PBS
+z9gOmentdBSDZalvKUzs4FEuKpj7VUcFdul0n3/dt9co6dBVh6OYyBeiA9id31Sl
+T6ISNfK10d8C49n1B624GypDxNlFAgMBAAECgYBJSdhtgfetAMfSNmI6Oomtw7XQ
+465nITZPj7cuEsbLu1AqeXTaZIu1CGHuKDMwWEMRT2BbknZmly7AOOAVEHeXacPm
+sOaA2HgnmCX+MRu5XTskDuaXgpvNWgymrdTerBoo8K3BTXiHnMK5A5V/Zfunv5iB
+hsryAhrxzUWrlJPm7QJBAPgLE7wleTMwbbkdNHtBuGVemFdpNAhCszvcMMEvcC+j
+syB5AUVnVunn+UvXUHeSo4u4xW0JESWw+RT8CM2ECRMCQQDqtC6MWqzSmGcn3Vx9
+EiFVtLr+dDhV++hOM4pBVddFHXzUMv3vmbGTdGJKeHbkt/dPntZr2dRMtxPzhjG8
+p/dHAkB+/aTX8dOQap3yZUpmRGp0s66JKhpylDuRTRVFAtWL/mKKIImPD+5GiPZw
+ZscSwOesdCfXwAmgY2/S14pmNdAzAkBC60jyX9Ay451V8nmyd37lrvg6IO0HJyIf
+Wfarlkwgur2iyz84F7xX7LExxpMvt3xeSU2dxqgPj4uyvapkvgd1AkBvoG3qgJbJ
+ZJafasvFjd91JNhgjSz7yeAXV1YeHjZS+GhNVJMErHqH4o60vFQyEYX0t+5dmM6k
+fVCtpsVcSMBy</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </md:KeyDescriptor>
+
+        <!-- Endpoint del Service Provider deputato a ricevere le LogoutRequest -->
+        <md:SingleLogoutService
+            Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+            Location="https://django-speed.herokuapp.com/spid/slo-logout/" />
+
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+
+        <!-- Endpoint del Service Provider deputato a ricevere le asserzioni di login.
+             (può essere ripetuto più volte, incrementando l'attributo index) -->
+        <md:AssertionConsumerService
+            Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+            Location="https://django-speed.herokuapp.com/spid/attributes-consumer/"
+            index="0"
+            isDefault="true" />
+
+        <!-- Gruppo di attributi predefinito, che il Service Provider potrà richiedere
+             durante in login. Si può specificare più volte. Si raccomanda di limitare
+             gli attributi richiesti ai soli necessari per l'erogazione del proprio servizio. -->
+        <md:AttributeConsumingService index="1">
+            <md:ServiceName xml:lang="it">Django Speed</md:ServiceName>
+            <md:ServiceDescription xml:lang="it">The Best Service Provider</md:ServiceDescription>
+            <md:RequestedAttribute Name="name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="fiscalNumber" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="familyName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="spidCode" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="gender" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="dateOfBirth" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="countyOfBirth" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="idCard" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="registeredOffice" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="email" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="digitalAddress" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="ivaCode" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="placeOfBirth" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="companyName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="mobilePhone" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="address" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+            <md:RequestedAttribute Name="expirationDate" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+        </md:AttributeConsumingService>
+
+    </md:SPSSODescriptor>
+
+    <!-- Informazioni generali sul Service Provider -->
+    <md:Organization>
+        <md:OrganizationName xml:lang="it">Django Speed</md:OrganizationName>
+        <md:OrganizationDisplayName xml:lang="it">Django Speed</md:OrganizationDisplayName>
+        <md:OrganizationURL xml:lang="it">https://django-speed.herokuapp.com/</md:OrganizationURL>
+    </md:Organization>
+
+</md:EntityDescriptor>
