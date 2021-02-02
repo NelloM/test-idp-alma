@@ -34,7 +34,7 @@ debug: true
 # Indirizzo IP dell'interfaccia su cui esporre il server e porta
 # (0.0.0.0 per ascoltare su tutte le interfacce)
 host: 0.0.0.0
-port: 8088
+# port: 8088
 
 # Abilita (true) o disabilita (false) la modalità HTTPS per l'IdP
 https: false
