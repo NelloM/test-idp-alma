@@ -21,7 +21,7 @@ metadata:
   local:
     - "./conf/sp_metadata.xml"
 #  remote:
-    - "https://django-speed.herokuapp.com/spid/metadata"
+#    - "https://django-speed.herokuapp.com/spid/metadata"
 #  db: 'postgresql+psycopg2://postgres:@localhost:5432/exampledb'
 
 
@@ -37,7 +37,7 @@ host: 0.0.0.0
 port: 8088
 
 # Abilita (true) o disabilita (false) la modalità HTTPS per l'IdP
-https: true
+https: false
 
 # Se si abilita HTTPS è necessario specificare chiave e certificato
 # (indipendenti da chiave e certificato SAML)

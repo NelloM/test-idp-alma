@@ -1,4 +1,5 @@
 import json
+import os
 from copy import deepcopy
 
 import yaml
@@ -140,7 +141,7 @@ class Config:
 
     @property
     def port(self):
-        return self._confdata.get('port', 8000)
+        return self._confdata.get('port', os.environ.get('PORT'))
 
     @property
     def debug(self):
