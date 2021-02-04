@@ -21,7 +21,7 @@ metadata:
 #  local:
 #    - "./conf/sp_metadata.xml"
   remote:
-    - "https://spid-cie-middleware.herokuapp.com/spid/metadata"
+    - "https://iam-gpdp.herokuapp.com/spid/metadata"
 #  db: 'postgresql+psycopg2://postgres:@localhost:5432/exampledb'
 
 
