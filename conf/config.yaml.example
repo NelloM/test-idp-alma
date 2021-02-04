@@ -18,10 +18,10 @@ cert_file: "./conf/idp.crt"
 metadata:
    # Sono supportati anche metacaratteri,
    # es: "*.xml", "sp_metadat?.xml" o "sp[-_]metadat[a-z].xml"
-  local:
-    - "./conf/sp_metadata.xml"
-#  remote:
-#    - "https://django-speed.herokuapp.com/spid/metadata"
+#  local:
+#    - "./conf/sp_metadata.xml"
+  remote:
+    - "https://spid-cie-middleware.herokuapp.com/spid/metadata"
 #  db: 'postgresql+psycopg2://postgres:@localhost:5432/exampledb'
 
 
