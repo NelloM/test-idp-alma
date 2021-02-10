@@ -216,16 +216,7 @@ class HTTPRedirectSignatureVerifier:
     def _verify_signature(self):
         pubkey = self._get_pubkey()
         verifier = self._verifiers[self._request.sig_alg]
-        print('*******************************************************************')
-        print('SIGNED DATA')
-        print(self._request.signed_data)
-        print('*******************************************************************')
 
-
-        print('*******************************************************************')
-        print('REQURST SIGNATURE')
-        print(self._request.signature)
-        print('*******************************************************************')
         if not verifier.verify(
                 pubkey, self._request.signed_data, self._request.signature):
             self._fail('Verifica della firma fallita.')
@@ -299,6 +290,16 @@ class HTTPPostSignatureVerifier:
 
     def _verify_signature(self):
         try:
+            print('*******************************************************************')
+            print('SAML REQUEST')
+            print(self._request.saml_request)
+            print('*******************************************************************')
+
+
+            print('*******************************************************************')
+            print('CERTIFICATO')
+            print(self._cert)
+            print('*******************************************************************')
             self._verifier.verify(
                 self._request.saml_request, x509_cert=self._cert)
         except InvalidDigest:
