@@ -216,6 +216,16 @@ class HTTPRedirectSignatureVerifier:
     def _verify_signature(self):
         pubkey = self._get_pubkey()
         verifier = self._verifiers[self._request.sig_alg]
+        print('*******************************************************************')
+        print('SIGNED DATA')
+        print(self._request.signed_data)
+        print('*******************************************************************')
+
+
+        print('*******************************************************************')
+        print('REQURST SIGNATURE')
+        print(self._request.signature)
+        print('*******************************************************************')
         if not verifier.verify(
                 pubkey, self._request.signed_data, self._request.signature):
             self._fail('Verifica della firma fallita.')
