@@ -23,6 +23,7 @@ metadata:
   remote:
     - "https://iam-gpdp.herokuapp.com/spid/metadata"
     - "https://iam-gpdp-prod.herokuapp.com/spid/metadata/"
+    - "http://nunziocapasso.altervista.org/content/strisciots/SAMLSP-00D7Q000009hUVX.xml"
 #  db: 'postgresql+psycopg2://postgres:@localhost:5432/exampledb'
 
 
