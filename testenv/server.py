@@ -253,16 +253,35 @@ class IdpServer:
         # The IdpServer class should not
         # be responsible of request parsing, or know anything
         # about request parsing *at all*.
+        print('Sono dentro http redirect')
         saml_msg = self.unpack_args(request.args)
+        print('Ho preso il messaggio')
+        print(saml_msg)
+        print(type(saml_msg))
         request_data = HTTPRedirectRequestParser(saml_msg).parse()
+        print('Ho preso la request data')
+        print(request_data)
+        print(type(request_data))
         deserializer = get_http_redirect_request_deserializer(
             request_data, action)
+        print('Ho deserializzato la request')
+        print(deserializer)
+        print(type(deserializer))
         saml_tree = deserializer.deserialize()
+        print('Ho creato il saml_tree')
+        print(saml_tree)
+        print(type(saml_tree))
         certs = self._get_certificates_by_issuer(saml_tree.issuer.text)
+        print('Ho preso il certificato')
+        print(certs)
+        print(type(certs))
         if not certs:
             raise NoCertificateError
         for cert in certs:
+            print('Sto per verificare la firma')
             HTTPRedirectSignatureVerifier(cert, request_data).verify()
+            print('Ho verificato la firma')
+            
         return SPIDRequest(request_data, saml_tree)
 
     def _handle_http_post(self, action):
@@ -271,15 +290,34 @@ class IdpServer:
         # The IdpServer class should not
         # be responsible of request parsing, or know anything
         # about request parsing *at all*.
+        print('Sono dentro http POST')
+
         saml_msg = self.unpack_args(request.form)
+        print('Ho preso il messaggio')
+        print(saml_msg)
+        print(type(saml_msg))
         request_data = HTTPPostRequestParser(saml_msg).parse()
+        print('Ho preso la request data')
+        print(request_data)
+        print(type(request_data))
         deserializer = get_http_post_request_deserializer(request_data, action)
+        print('Ho deserializzato la request')
+        print(deserializer)
+        print(type(deserializer))
         saml_tree = deserializer.deserialize()
+        print('Ho creato il saml_tree')
+        print(saml_tree)
+        print(type(saml_tree))
         certs = self._get_certificates_by_issuer(saml_tree.issuer.text)
+        print('Ho preso il certificato')
+        print(certs)
+        print(type(certs))
         if not certs:
             raise NoCertificateError
         for cert in certs:
+            print('Sto per verificare la firma')
             HTTPPostSignatureVerifier(cert, request_data).verify()
+            print('Ho verificato la firma')
         return SPIDRequest(request_data, saml_tree)
 
     def _get_certificates_by_issuer(self, issuer):
@@ -311,7 +349,7 @@ class IdpServer:
             key = self._store_request(spid_request.saml_tree)
             session['request_key'] = key
             session['relay_state'] = spid_request.data.relay_state or ''
-            return redirect(url_for('login'))
+            return redirect(url_for('login', _scheme='https'))
         except RequestParserError as err:
             self._raise_error(err.args[0])
         except SignatureVerificationError as err:
@@ -385,7 +423,7 @@ class IdpServer:
             if 'fiscalNumber' in extra and not extra['fiscalNumber'].startswith('TINIT-'):
                 extra['fiscalNumber'] = 'TINIT-{}'.format(extra['fiscalNumber'])
             self.user_manager.add(username, password, sp, extra.copy())
-        return redirect(url_for('users'))
+        return redirect(url_for('users', _scheme='https'))
 
     def index(self):
         rendered_form = render_template(
@@ -471,7 +509,7 @@ class IdpServer:
                 rendered_form = render_template(
                     'login.html',
                     **{
-                        'action': url_for('login'),
+                        'action': url_for('login', _scheme='https'),
                         'request_key': key,
                         'relay_state': relay_state,
                         'extra_challenge': extra_challenge,
